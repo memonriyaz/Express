@@ -1,4 +1,7 @@
+import "dotenv/config";
 import express from "express";
+
+const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.json());
@@ -60,6 +63,6 @@ app.delete("/teas/:id", (req, res) => {
   res.send(teaData);
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Listening on port 3000");
 });
